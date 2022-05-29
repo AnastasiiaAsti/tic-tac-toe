@@ -5,10 +5,14 @@
     background-color: rgb(37, 29, 29);
 }
 
+section {
+    text-align: center;
+}
+
 #board {
     width: 600px;
     height: 600px;
-    margin: 50px;
+    margin: 80px auto 80px;
     border: 3px solid rgb(61, 43, 226);
     border-radius: ;
 }
@@ -23,7 +27,6 @@
 #reset {
     width: 200px;
     height: 100px;
-    margin: 100px 250px;
     font-size: 30px;
     background-color: rgb(223, 160, 83);
 }
