@@ -15,8 +15,10 @@ const WINNING_COMBO = [
     ['0', '3', '6'], ['1', '4', '7'], ['2', '5', '8'],
     ['0', '4', '8'], ['2', '4', '6']    
 ]
+//the const for the end of the game
+const END_GAME = false;
 
-let currentPlayer = ''
+let currentPlayer = PLAYER_X
 
 
 
@@ -39,21 +41,35 @@ document.getElementById('reset').addEventListener('click', handleReset)
 //create a function for event listener for the board
 function handleClick(evt) {
     //console.log(evt.target)
+    //const for the cell that was already clicked
+    const clickedCell = evt.target;
+    //will use 'data-value' on the cells to identify which cell is which
+    //parseInt will transform 'string' into a number
+    const clickedCellIndex = parseInt(clickedCell.getAttribute('data-value')
+    );
+    //checking if the cell was clicked or if the game is over
+    if (document.)
+        //if not those 2 options - game continues
+        handlePressedCell(clickedCell, clickedCellIndex);
+    handleCheckResults();
+}
+
+
+//we need a function that will handle the cell that was pressed
+function handlePressedCell(clickedCell, clickedCellIndex) { 
 
 }
-//we need a function that will handle the cell that was pressed
-function handlePressedCell() { }
 //a function to check results
-function handleCheckResults() { }
+function handleCheckResults() { 
+    
+}
 //a function to change the player
 function handlePlayerChange() { }
 //a function to reset the game
 function handleReset() { }
 
 
-function render {
-
-}
+function render() {}
 
 function init() {
     
