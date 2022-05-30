@@ -64,13 +64,20 @@ function handlePressedCell(clickedCell, clickedCellIndex) {
     //updating UI to show the move
     clickedCell.innerHTML = currentPlayer;
     //console.log(handlePressedCell)
+    handlePlayerChange()
 }
 //a function to check results
 function handleCheckResults() { 
 
 }
 //a function to change the player
-function handlePlayerChange() { }
+function handlePlayerChange() { 
+    if (currentPlayer === PLAYER_X) {
+        currentPlayer = PLAYER_O;
+    } else {
+        currentPlayer = PLAYER_X
+    }
+}
 //a function to reset the game
 function handleReset() {
 
