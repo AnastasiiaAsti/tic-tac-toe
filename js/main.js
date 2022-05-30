@@ -2,7 +2,7 @@
 //players 
 const PLAYER_X = 'x'
 const PLAYER_O = 'o'
-
+const CELL_ELEMENTS = document.getElementsByClassName('cell')
 const RESET_BTN = document.getElementById('reset')
 
 const CURRENT_TURN = ''
@@ -23,7 +23,9 @@ let currentPlayer = PLAYER_X
 
 
 /*----- app's state (variables) -----*/
-
+//a varibale for a current game state that I will update in every step of
+//the game. For now an emply array.
+let gameStates = ['', '', '',];
 
 
 /*----- cached element references -----*/
@@ -48,7 +50,7 @@ function handleClick(evt) {
     const clickedCellIndex = parseInt(clickedCell.getAttribute('data-value')
     );
     //checking if the cell was clicked or if the game is over
-    if (document.)
+    //if (document.)
         //if not those 2 options - game continues
         handlePressedCell(clickedCell, clickedCellIndex);
     handleCheckResults();
@@ -57,16 +59,22 @@ function handleClick(evt) {
 
 //we need a function that will handle the cell that was pressed
 function handlePressedCell(clickedCell, clickedCellIndex) { 
-
+    //updating gameState to display that cell was clicked
+    gameStates[clickedCellIndex] = currentPlayer;
+    //updating UI to show the move
+    clickedCell.innerHTML = currentPlayer;
+    //console.log(handlePressedCell)
 }
 //a function to check results
 function handleCheckResults() { 
-    
+
 }
 //a function to change the player
 function handlePlayerChange() { }
 //a function to reset the game
-function handleReset() { }
+function handleReset() {
+
+}
 
 
 function render() {}
