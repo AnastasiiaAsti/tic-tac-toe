@@ -2,12 +2,12 @@
 //players 
 const PLAYER_X = 'x'
 const PLAYER_O = 'o'
-const CELL_ELEMENTS = document.getElementsByClassName('cell')
+const CELL_ELEMENTS = document.querySelectorAll('.cell')
 const RESET_BTN = document.getElementById('reset')
 
-const CURRENT_TURN = `${currentPlayer}'s turn`
-const WINNING_MESSAGE = `Player ${currentPlayer} is the WINNER!`
-const DRAW_MESSAGE = 'Shake hands, we are all winners here'
+// const CURRENT_TURN = `${currentPlayer}'s turn`
+// const WINNING_MESSAGE = `Player ${currentPlayer} is the WINNER!`
+// const DRAW_MESSAGE = 'Shake hands, we are all winners here'
 
 //there are 8 winning combinations:
 const WINNING_COMBO = [
@@ -24,7 +24,7 @@ let playerOTurn
 /*----- app's state (variables) -----*/
 //a varibale for a current game state that I will update in every step of
 //the game. For now an emply array.
-let gameStates = ['', '', '', '', ''];
+let gameStates = ['', '', '', '', '', '', '', '', ''];
 
 
 /*----- cached element references -----*/
@@ -33,7 +33,11 @@ const board = document.getElementById('board')
 
 /*----- event listeners -----*/
 //adding eventListener to each cell
-board.addEventListener('click', handleClick)
+//we iterating over each cell element and adding an event listener
+//{once: true} - is helping to make sure the cell will not be clicked twice
+CELL_ELEMENTS.forEach(cell => {
+    cell.addEventListener('click', handleClick, {once: true})
+})
 //add an eventListener to a RESET btn
 document.getElementById('reset').addEventListener('click', handleReset)
 
