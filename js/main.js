@@ -5,9 +5,9 @@ const PLAYER_O = 'o'
 const CELL_ELEMENTS = document.getElementsByClassName('cell')
 const RESET_BTN = document.getElementById('reset')
 
-const CURRENT_TURN = ''
-const WINNING_MESSAGE = ''
-const DRAW_MESSAGE = ''
+const CURRENT_TURN = `${currentPlayer}'s turn`
+const WINNING_MESSAGE = `Player ${currentPlayer} is the WINNER!`
+const DRAW_MESSAGE = 'Shake hands, we are all winners here'
 
 //there are 8 winning combinations:
 const WINNING_COMBO = [
@@ -15,17 +15,16 @@ const WINNING_COMBO = [
     ['0', '3', '6'], ['1', '4', '7'], ['2', '5', '8'],
     ['0', '4', '8'], ['2', '4', '6']    
 ]
-//the const for the end of the game
-const END_GAME = false;
 
 let currentPlayer = PLAYER_X
+let playerOTurn
 
 
 
 /*----- app's state (variables) -----*/
 //a varibale for a current game state that I will update in every step of
 //the game. For now an emply array.
-let gameStates = ['', '', '',];
+let gameStates = ['', '', '', '', ''];
 
 
 /*----- cached element references -----*/
@@ -50,7 +49,7 @@ function handleClick(evt) {
     const clickedCellIndex = parseInt(clickedCell.getAttribute('data-value')
     );
     //checking if the cell was clicked or if the game is over
-    //if (document.)
+    
         //if not those 2 options - game continues
         handlePressedCell(clickedCell, clickedCellIndex);
     handleCheckResults();
@@ -80,7 +79,6 @@ function handlePlayerChange() {
 }
 //a function to reset the game
 function handleReset() {
-
 }
 
 
