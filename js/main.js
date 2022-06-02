@@ -52,7 +52,7 @@ function endGame(result) {
 }
 
 function handleReset() {
-    currentPlayer = 0;
+    currentPlayer = PLAYER_X;
     BOARD.fill(null);
     CELL_ELEMENTS.forEach((cell) => {
         cell.innerText = '';
