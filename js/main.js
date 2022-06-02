@@ -9,15 +9,13 @@ const PLAYER_O = 'o';
 
 let currentPlayer = PLAYER_X;
 
-const BOARD = (new Array(9).fill(null))
-
 
 /*----- app's state (variables) -----*/
 //let gameStates = ['', '', '', '', '', '', '', '', ''];
 
 
 /*----- cached element references -----*/
-
+const BOARD = (new Array(9).fill(null))
 
 
 /*----- event listeners -----*/
@@ -28,6 +26,7 @@ CELL_ELEMENTS.forEach((cell) => cell.addEventListener('click', CLICKED_BOX))
 /*----- functions -----*/
 function CLICKED_BOX(evt) {
     const id = evt.target.id;
+    RESET_BTN.addEventListener('click', handleReset);
 
     if (!BOARD[id]) {
         BOARD[id] = currentPlayer;
@@ -54,7 +53,7 @@ function endGame(result) {
 
 function handleReset() {
     currentPlayer = 0;
-    board.fill(null);
+    BOARD.fill(null);
     CELL_ELEMENTS.forEach((cell) => {
         cell.innerText = '';
     });
