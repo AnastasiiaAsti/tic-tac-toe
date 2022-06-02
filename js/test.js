@@ -5,10 +5,12 @@ const CELL_ELEMENTS = document.querySelectorAll('.cell')
 const PLAYER_X = 'x'
 const PLAYER_O = 'o'
 
-let currentPlayer = PLAYER_X
+let currentPlayer = PLAYER_X;
 
 const CLICKED_BOX = (evt) => {
-    console.log(evt.target.id);
+    const IDX = evt.target.id;
+
+    evt.target.innerText = currentPlayer
 };
 
 /*----- app's state (variables) -----*/
