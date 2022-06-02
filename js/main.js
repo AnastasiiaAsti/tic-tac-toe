@@ -57,7 +57,7 @@ function handleReset() {
     CELL_ELEMENTS.forEach((cell) => {
         cell.innerText = '';
     });
-    document.getElementById('game-status').innerText = 'Lets play';
+    document.getElementById('game-status').innerText = 'Lets Play!';
     CELL_ELEMENTS.forEach((cell) => cell.addEventListener('click', CLICKED_BOX))
 };
 
