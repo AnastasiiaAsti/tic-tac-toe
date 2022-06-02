@@ -10,7 +10,12 @@ let currentPlayer = PLAYER_X;
 const CLICKED_BOX = (evt) => {
     const IDX = evt.target.id;
 
-    evt.target.innerText = currentPlayer
+    evt.target.innerText = currentPlayer;
+    if (currentPlayer === PLAYER_X) {
+        currentPlayer = PLAYER_O;
+    } else {
+        currentPlayer = PLAYER_X
+    }
 };
 
 /*----- app's state (variables) -----*/
